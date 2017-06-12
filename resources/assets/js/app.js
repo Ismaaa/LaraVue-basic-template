@@ -7,18 +7,23 @@ import Vue from 'vue'
  * Router i Vuex
  */
 import VueRouter from 'vue-router'
+import VueResource from 'vue-resource'
 import store from './store'
 
 /**
  * Nom de la instància
  * @type {[instance]}
  */
-window.Vue = Vue;
+window.Vue = Vue
+
+Vue.use(VueRouter)
+Vue.use(VueResource)
 
 /**
  * Importació de components
  */
 import router from './routes' // Rutes
+import App from './App.vue'
 
 /**
  * Assignem els headers al resource
@@ -37,14 +42,6 @@ export default Vue
 const app = new Vue({
     el: '#app',
     store,
-    router
-});
-
-/**
- * Control de les rutes amb Vue-Router
- * @param  {[object]} (to, from, next [Cap a on va, d'on ve, i la funció next]
- * @return {[router]} [Redireccionem a una ruta]
- */
-router.beforeEach((to, from, next) => {
-	next()
+    router,
+	render: h => h(App),
 });
