@@ -13,6 +13,14 @@ let routes = [
             title: 'Inici',
         }        
     },
+    {
+        path: '/perfil',
+        component: require('./views/Perfil'),
+        name: 'Perfil',
+        meta: {
+            title: 'Perfil',
+        }        
+    },    
 ];
 
 export default new VueRouter({

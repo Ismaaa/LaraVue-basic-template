@@ -28,7 +28,7 @@ import App from './App.vue'
 /**
  * Assignem els headers al resource
  */
-Vue.http.headers.common['X-CSRF-TOKEN'] = document.getElementsByName('csrf-token')[0].getAttribute('content')
+//Vue.http.headers.common['X-CSRF-TOKEN'] = document.getElementsByName('csrf-token')[0].getAttribute('content')
 
 /**
  * Exportació de la instància
@@ -45,3 +45,15 @@ const app = new Vue({
     router,
 	render: h => h(App),
 });
+
+/**
+ * Bulma responsive menu
+ */
+(function() {
+    var burger = document.querySelector('.nav-toggle');
+    var menu = document.querySelector('.nav-menu');
+    burger.addEventListener('click', function() {
+        burger.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
+    });
+})();

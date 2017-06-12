@@ -1,7 +1,9 @@
 <template>
-	<div>
-		Iniciiii
-	</div>
+	<section class="section">
+		<div class="container">
+			Inici
+		</div>
+	</section>
 </template>
 
 <script>
